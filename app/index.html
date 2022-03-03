@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+</head>
+
+<body>
+    <ul id="ul"></ul>
+    <input id="in" type="text"><br>
+    <button id="b1">Добавить</button>
+    <a href="data" id="b2">Отправить</a>
+    <script>
+        let ul = document.getElementById("ul")
+        let inp = document.getElementById("in")
+        let b1 = document.getElementById("b1")
+        let b2 = document.getElementById("b2")
+
+        b1.addEventListener("click", function () {
+            ul.innerHTML += "<li>" + inp.value + "</li>"
+            inp.value=""
+        })
+
+        b2.addEventListener("click", function() {
+            let str = ""
+            let mas = document.getElementsByTagName("li")
+            for (let i = 0; i < mas.length; i++)
+                str += i == 0 ? "?mas=" + mas[i].innerHTML : "&mas=" + mas[i].innerHTML;
+            console.log(str)
+            b2.setAttribute("href", "data" + str)
+        })
+
+    </script>
+</body>
+
+</html>

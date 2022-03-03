@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+</head>
+
+<body>
+    <p id="p" style="color: red;"></p>
+    Логин<input id="log" type="text"><br>
+    Пароль<input id="pas" type="password"><br>
+    <a href="" id="b2">Отправить</a>
+
+    <script>
+        let login = document.getElementById("log")
+        let pass = document.getElementById("pas")
+        let p = document.getElementById("p")
+        let b2 = document.getElementById("b2")
+
+        b2.addEventListener("click", function () {
+            if (login.value == "user" && pass.value == "user"){
+                b2.setAttribute("href", "data")
+            }
+            else if (login.value == "admin" && pass.value == "admin"){
+                b2.setAttribute("href", "dataAdmin")
+            }
+            else if(login.value==""||pass.value==""){
+                p.innerHTML= "Ты еблан? Введи хоть что-то в логин или пароль"
+                login.style.borderColor="red";
+                pass.style.borderColor="red";
+            }
+            else{
+                p.innerHTML = "Вы неправильно ввели логин или пароль"
+                pass.value=""
+            }
+        })
+
+    </script>
+</body>
+
+</html>
