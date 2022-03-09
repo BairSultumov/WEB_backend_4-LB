@@ -1,0 +1,40 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>{{title}}</title> 
+    <meta charset="utf-8" /> 
+    <style>
+        body{
+            text-align: center;
+        }
+        header{
+            position: relative;
+            margin: auto;
+            height: 200px;
+            background-color: lightblue;
+            text-align: center;
+            font-size: 36pt;
+            width: 100%;
+        }
+        nav{
+            position: absolute;
+            height: 100px;
+            background-color: lightgreen;
+            width: 250px;
+        }
+        footer{
+            position: absolute;
+            bottom: 0;
+            height: 100px;
+            width: 100%;
+            background-color: brown;
+        }
+    </style>
+</head> 
+<body> 
+    {{> header}}
+    {{> menu}} 
+    {{{body}}} 
+    {{> footer}} 
+</body> 
+<html> 

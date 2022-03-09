@@ -6,13 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главная</title>
+    <style>
+        body{
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            margin: auto;
+            width: 100%;
+        }
+    </style>
 </head>
 
 <body>
+    <p>Вход</p>
     <p id="p" style="color: red;"></p>
-    Логин<input id="log" type="text"><br>
-    Пароль<input id="pas" type="password"><br>
-    <a href="" id="b2">Отправить</a>
+    <input placeholder="Логин" id="log" type="text"><br>
+    <input placeholder="Пароль" id="pas" type="password"><br>
+    <a style="text-decoration: none; color: black; border: 1px solid black;" href="" id="b2">Отправить</a>
 
     <script>
         let login = document.getElementById("log")
@@ -21,20 +31,20 @@
         let b2 = document.getElementById("b2")
 
         b2.addEventListener("click", function () {
-            if (login.value == "user" && pass.value == "user"){
+            if (login.value == "user" && pass.value == "user") {
                 b2.setAttribute("href", "data")
             }
-            else if (login.value == "admin" && pass.value == "admin"){
+            else if (login.value == "admin" && pass.value == "admin") {
                 b2.setAttribute("href", "dataAdmin")
             }
-            else if(login.value==""||pass.value==""){
-                p.innerHTML= "Ты еблан? Введи хоть что-то в логин или пароль"
-                login.style.borderColor="red";
-                pass.style.borderColor="red";
+            else if (login.value == "" || pass.value == "") {
+                // p.innerHTML = "Ты еблан? Введи хоть что-то в логин или пароль"
+                alert("Ты еблан? Введи хоть что-то в логин или пароль")
             }
-            else{
-                p.innerHTML = "Вы неправильно ввели логин или пароль"
-                pass.value=""
+            else {
+                // p.innerHTML = "Вы неправильно ввели логин или пароль"
+                alert("Вы неправильно ввели логин или пароль")
+                pass.value = ""
             }
         })
 
