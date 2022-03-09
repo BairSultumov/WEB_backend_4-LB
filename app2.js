@@ -23,14 +23,14 @@ app.get("/", function (request, response) {
 app.get("/data", function (request, response) {
     let str = ""
     for (let i = 0; i < 10; i++)
-        str += `<p>Блять</p>`
+        str += `<p>Добро пожаловать пользователь</p>`
     response.send(str)
 });
 
 app.get("/dataAdmin", function (request, response) {
     let str = ""
     for (let i = 0; i < 10; i++)
-        str += `<p style:"color:red">Вы перешли на сайт админа</p>`
+        str += `<p style:"color:red">Вы перешли на сайт администратора</p>`
     response.send(str)
 });
 
