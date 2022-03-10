@@ -8,6 +8,12 @@ app.set("view options", { layout: "layouts/layout" });
 
 hbs.registerPartials(__dirname + "/views/partials"); // частичные пред. 
 
+hbs.registerHelper("getTime", function(){ 
+    let mas=["Новость 1","Новость 2","Новость 3","Новость 4"]
+    let news=mas[Math.round(Math.random()*4)]
+    return `Новость дня: ${news}`; 
+});
+
 app.use("/home", function (request, response) {
     response.render("home.hbs", {
         title: "Главная страница"
